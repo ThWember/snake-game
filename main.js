@@ -28,6 +28,9 @@ function snakebody() {
 function startGame() {
     makebg();
     snakebody();
+
+    let snakex = snake[0].x;
+    let snakey = snake[0].y;
 }
 
 let game = setInterval(startGame, 100);
