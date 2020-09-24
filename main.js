@@ -29,3 +29,5 @@ function startGame() {
     makebg();
     snakebody();
 }
+
+let game = setInterval(startGame, 100);
