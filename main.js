@@ -62,14 +62,31 @@ function update (event) {
 }
 
 function startGame() {
+    if(snake[0].x > 31 * box && direction == "right") {
+        snake[0].x = 0;
+    }
+
+    if(snake[0].x < 0 * box && direction == "left") {
+        snake[0].x = 32 * box;
+    }
+
+    if(snake[0].y > 31 * box && direction == "down") {
+        snake[0].y = 0;
+    }
+
+    if(snake[0].y < 0 * box && direction == "up") {
+        snake[0].y = 32 * box;
+    }
+
     makebg();
     snakebody();
 
     let snakex = snake[0].x;
     let snakey = snake[0].y;
 
-    if (direction == "right")
+    if (direction == "right") {
         snakex += box;
+    }
 
     if (direction == "left") {
         snakex -= box;
