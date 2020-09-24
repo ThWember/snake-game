@@ -7,8 +7,8 @@ let box = 16;
 let snake = [];
 
 snake[0] = {
-    x: 8 * box,
-    y: 8 * box
+    x: 16 * box,
+    y: 16 * box
 }
 
 let direction = "right";
@@ -32,12 +32,11 @@ function startGame() {
     let snakex = snake[0].x;
     let snakey = snake[0].y;
 
-    if (direction == "right") {
-        snakeX += box;
-    }
+    if (direction == "right")
+        snakex += box;
 
     if (direction == "left") {
-        snakeX -= box;
+        snakex -= box;
     }
 
     if (direction == "up") {
@@ -47,6 +46,15 @@ function startGame() {
     if (direction == "down") {
         snakey += box;
     }
+
+    snake.pop();
+
+    let newHead = {
+        x: snakex,
+        y: snakey
+    }
+
+    snake.unshift(newHead);
 }
 
 let game = setInterval(startGame, 100);
