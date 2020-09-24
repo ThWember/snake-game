@@ -13,7 +13,7 @@ snake[0] = {
 
 let direction = "right";
 
-function criarbg() {
+function makebg() {
     context.fillStyle = "green";
     context.fillRect(0, 0, 32 * box, 32 * box);
 }
@@ -25,5 +25,7 @@ function snakebody() {
     }
 }
 
-criarbg();
-snakebody();
+function startGame() {
+    makebg();
+    snakebody();
+}
