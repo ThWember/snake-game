@@ -111,7 +111,12 @@ function startGame() {
         snakey += box;
     }
 
-    snake.pop();
+    if (snakex != food.x || snakey != food.y) {
+        snake.pop();
+    } else {
+       food.x = Math.floor(Math.random() * 31 + 1) * box,
+       food.y = Math.floor(Math.random() * 31 + 1) * box
+    }
 
     let newHead = {
         x: snakex,
